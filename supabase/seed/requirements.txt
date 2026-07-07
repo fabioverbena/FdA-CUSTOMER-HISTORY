@@ -1,0 +1,3 @@
+# Dipendenze script seed — solo stdlib Python, nessun pacchetto extra necessario.
+# Gli script usano urllib.request (incluso in Python 3.x).
+# Nessun pip install richiesto.

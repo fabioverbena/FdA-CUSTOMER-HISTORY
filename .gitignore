@@ -1,0 +1,40 @@
+# Credenziali e configurazione locale
+.env
+local.env
+*.env.local
+service-account.json
+firebase-adminsdk*.json
+
+# Runtime daemon
+documenti_state.json
+watcher_seen.json
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Node / Frontend
+node_modules/
+.next/
+out/
+.vercel/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
