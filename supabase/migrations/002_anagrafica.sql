@@ -7,10 +7,10 @@
 -- il daemon li scrive direttamente dall'estrazione PDF.
 
 CREATE TABLE IF NOT EXISTS clienti (
-  piva              VARCHAR(11)  PRIMARY KEY,
+  piva              VARCHAR(30)  PRIMARY KEY,
   ragione_sociale   VARCHAR      NOT NULL,
   indirizzo         VARCHAR,
-  cap               VARCHAR(5),
+  cap               VARCHAR(10),
   comune            VARCHAR,
   provincia         VARCHAR,
   sigla_provincia   CHAR(2),
@@ -40,10 +40,10 @@ CREATE OR REPLACE TRIGGER trg_clienti_updated_at
 
 
 CREATE TABLE IF NOT EXISTS fornitori (
-  piva              VARCHAR(11)  PRIMARY KEY,
+  piva              VARCHAR(30)  PRIMARY KEY,
   ragione_sociale   VARCHAR      NOT NULL,
   indirizzo         VARCHAR,
-  cap               VARCHAR(5),
+  cap               VARCHAR(10),
   comune            VARCHAR,
   provincia         VARCHAR,
   sigla_provincia   CHAR(2),
