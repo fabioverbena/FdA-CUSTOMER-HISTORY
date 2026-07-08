@@ -125,7 +125,7 @@ def main():
     print(f"Articoli letti: {len(rows)} (saltati: {skipped})")
 
     espositori = [r for r in rows if r["is_espositore"]]
-    print(f"  → espositori classificati: {len(espositori)}")
+    print(f"  -> espositori classificati: {len(espositori)}")
     for e in espositori:
         print(f"     {e['codice_mexal']:12s}  {e['descrizione']}")
 
