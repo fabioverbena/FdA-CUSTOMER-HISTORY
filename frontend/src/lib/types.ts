@@ -18,9 +18,9 @@ export interface Documento {
   numero_documento: string
   tipo: 'BC' | 'FTA' | 'PC' | 'OC' | 'OF' | 'BF'
   data_documento: string
-  cliente_piva: string | null
-  fornitore_piva: string | null
-  importo_totale: number | null
+  piva_cliente: string | null
+  piva_fornitore: string | null
+  totale: number | null
   percorso_pdf_locale: string | null
   created_at: string
 }

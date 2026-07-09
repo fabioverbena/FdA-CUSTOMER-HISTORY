@@ -98,11 +98,11 @@ export default function Documenti() {
                 </td>
                 <td className="px-4 py-3 font-mono text-slate-700">{d.numero_documento}</td>
                 <td className="px-4 py-3 text-slate-500 text-xs font-mono">
-                  {d.cliente_piva ?? d.fornitore_piva ?? '—'}
+                  {d.piva_cliente ?? d.piva_fornitore ?? '—'}
                 </td>
                 <td className="px-4 py-3 text-right text-slate-700">
-                  {d.importo_totale != null
-                    ? `€ ${d.importo_totale.toLocaleString('it-IT', { minimumFractionDigits: 2 })}`
+                  {d.totale != null
+                    ? `€ ${d.totale.toLocaleString('it-IT', { minimumFractionDigits: 2 })}`
                     : '—'}
                 </td>
               </tr>

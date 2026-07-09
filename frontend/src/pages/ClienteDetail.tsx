@@ -19,7 +19,7 @@ export default function ClienteDetail() {
 
     Promise.all([
       supabase.from('clienti').select('*').eq('piva', decoded).single(),
-      supabase.from('documenti').select('*').eq('cliente_piva', decoded).order('data_documento', { ascending: false }).limit(100),
+      supabase.from('documenti').select('*').eq('piva_cliente', decoded).order('data_documento', { ascending: false }).limit(100),
       supabase.from('espositori').select('*, modelli_espositore(nome)').eq('cliente_piva', decoded),
     ]).then(([cRes, dRes, eRes]) => {
       setCliente(cRes.data)
@@ -33,7 +33,7 @@ export default function ClienteDetail() {
   if (!cliente) return <div className="p-6 text-slate-400">Cliente non trovato.</div>
 
   const fatture  = documenti.filter(d => d.tipo === 'FTA')
-  const fatturato = fatture.reduce((s, d) => s + (d.importo_totale ?? 0), 0)
+  const fatturato = fatture.reduce((s, d) => s + (d.totale ?? 0), 0)
 
   return (
     <div className="p-6 max-w-5xl">
@@ -139,8 +139,8 @@ export default function ClienteDetail() {
                 </td>
                 <td className="px-4 py-3 font-mono text-slate-700">{d.numero_documento}</td>
                 <td className="px-4 py-3 text-right text-slate-700">
-                  {d.importo_totale != null
-                    ? `€ ${d.importo_totale.toLocaleString('it-IT', { minimumFractionDigits: 2 })}`
+                  {d.totale != null
+                    ? `€ ${d.totale.toLocaleString('it-IT', { minimumFractionDigits: 2 })}`
                     : '—'}
                 </td>
               </tr>
