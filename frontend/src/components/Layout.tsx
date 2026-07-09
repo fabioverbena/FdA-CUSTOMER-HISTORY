@@ -1,12 +1,16 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import { supabase } from '@/lib/supabase'
-import { Users, FileText, Monitor, LogOut } from 'lucide-react'
+import { Users, FileText, Monitor, LogOut, LayoutDashboard, BarChart2, Search, Link2 } from 'lucide-react'
 import clsx from 'clsx'
 
 const nav = [
+  { to: '/dashboard',  label: 'Dashboard',  Icon: LayoutDashboard },
   { to: '/clienti',    label: 'Clienti',    Icon: Users },
   { to: '/documenti',  label: 'Documenti',  Icon: FileText },
   { to: '/espositori', label: 'Espositori', Icon: Monitor },
+  { to: '/analitiche', label: 'Analitiche', Icon: BarChart2 },
+  { to: '/ricerca',    label: 'Ricerca',    Icon: Search },
+  { to: '/grenke',     label: 'GRENKE',     Icon: Link2 },
 ]
 
 export default function Layout() {

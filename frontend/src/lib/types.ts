@@ -20,6 +20,7 @@ export interface Documento {
   data_documento: string
   piva_cliente: string | null
   piva_fornitore: string | null
+  piva_cliente_finale: string | null
   totale: number | null
   percorso_pdf_locale: string | null
   created_at: string
@@ -32,6 +33,19 @@ export interface Espositore {
   cliente_piva: string | null
   created_at: string
   modelli_espositore?: { nome: string }
+}
+
+export interface RigaDocumento {
+  id: string
+  documento_id: string
+  codice_articolo: string | null
+  descrizione: string | null
+  quantita: number | null
+  prezzo_unitario: number | null
+  totale_riga: number | null
+  note: string | null
+  tipo_riga: 'espositore' | 'ricambio' | 'servizio' | 'altro'
+  espositore_id: string | null
 }
 
 export const TIPO_LABEL: Record<string, string> = {
